@@ -13,6 +13,9 @@ button {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -65,12 +68,6 @@ ol {
   white-space: nowrap;
 }
 
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .content {
   display: flex;
   align-items: end;
@@ -85,8 +82,11 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
+  display: grid;
+  gap: 30px;
   height: 298px;
-  overflow: hidden scroll;
+  overflow-y: auto;
 }
 
 .content__details {
@@ -97,6 +97,7 @@ ol {
 }
 
 .result__video-container {
+  position: relative;
   width: 711px;
   height: 386px;
   margin: 0 0 16px;
@@ -113,17 +114,14 @@ ol {
   gap: 30px;
 }
 
-.content__list-container {
-  display: grid;
-  gap: 30px;
-}
-
 .content__video-card {
   display: flex;
   align-items: start;
 }
 
 .content__video-card-description-container {
+  display: grid;
+  gap: 6px;
   width: 100%;
 }
 
@@ -157,11 +155,14 @@ ol {
   color: #545050;
 }
 
+.content__list-item {
+  padding: 0 3px;
+}
+
 .content__card-link {
+  display: block;
   color: #fff;
   text-decoration: none;
-  display: block;
-  padding: 0 3px;
 }
 
 .content__card-link:hover .content__video-card-title,
@@ -185,12 +186,8 @@ ol {
   background-color: #545050;
 }
 
-.content__video-card-description-container {
-  display: grid;
-  gap: 6px;
-}
-
 .content__video-card-title {
+  overflow: hidden;
   color: #fff;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
@@ -198,22 +195,21 @@ ol {
   line-height: 100%;
   letter-spacing: 0;
   text-transform: uppercase;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
+  display: -webkit-box;
+  overflow: hidden;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
   letter-spacing: 0;
-  display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+  -webkit-line-clamp: 4;
 }
 
 .search-form__checkbox-list {
@@ -223,6 +219,8 @@ ol {
 }
 
 .search-form__fieldset {
+  display: grid;
+  gap: 5px;
   border: none;
 }
 
@@ -231,11 +229,6 @@ ol {
   align-items: center;
   gap: 5px;
   width: fit-content;
-}
-
-.search-form__fieldset {
-  display: grid;
-  gap: 5px;
 }
 
 .search-form__textfield {
@@ -248,6 +241,11 @@ ol {
   color: #fff;
   background-color: transparent;
   appearance: none;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 .search-form__textfield::placeholder {
@@ -256,7 +254,7 @@ ol {
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 4px;
+  outline-offset: 2px;
 }
 
 .search-form__pseudo-checkbox {
@@ -264,6 +262,10 @@ ol {
   height: 19px;
   border: 1px solid #fff;
   padding: 1px;
+}
+
+.search-form__pseudo-checkbox:focus {
+  outline: none;
 }
 
 .search-form__pseudo-checkbox::after {
@@ -281,6 +283,7 @@ ol {
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .search-form__label-text {
@@ -293,19 +296,19 @@ ol {
 }
 
 .button {
-  background-color: transparent;
   border: 1px solid #fff;
+  color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0;
-  color: #fff;
+  background-color: transparent;
 }
 
 .search-form__submit-button {
-  padding: 6px 74px;
   align-self: flex-end;
+  padding: 6px 74px;
 }
 
 .more-button {
@@ -313,24 +316,19 @@ ol {
   padding: 6px 0;
 }
 
-button:hover {
+.button:hover {
   text-decoration: underline;
 }
 
-button:active {
+.button:active {
   background-color: #545050;
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button:focus-visible {
+.button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 4px;
-}
-
-.result__video-container,
-.content__list-container {
-  position: relative;
+  outline-offset: 2px;
 }
