@@ -198,6 +198,9 @@ ol {
   line-height: 100%;
   letter-spacing: 0;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content__video-card-description {
@@ -207,6 +210,10 @@ ol {
   font-size: 18px;
   line-height: 16.2px;
   letter-spacing: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .search-form__checkbox-list {
@@ -321,4 +328,9 @@ button:focus {
 button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 4px;
+}
+
+.result__video-container,
+.content__list-container {
+  position: relative;
 }
